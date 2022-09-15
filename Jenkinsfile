@@ -8,7 +8,7 @@ pipeline {
 
         stage("terraform init") {
             steps{
-                sh "returnStatus: true, script: 'terraform workspace new dev'"
+                sh returnStatus: true, script: 'terraform workspace new dev'
                 sh "terraform init"
                 sh "terraform apply -auto-approve"
             }
