@@ -16,14 +16,14 @@ pipeline {
 
          stage("Dev Terraform Apply") {
             steps{
-                sh "returnStatus: true, script: 'terraform workspace new dev'"
+                sh returnStatus: true, script: 'terraform workspace new dev'
                 sh "terraform apply -auto-approve"
             }
         }
 
         stage("Dev Terraform Delete") {
             steps{
-                sh "returnStatus: true, script: 'terraform workspace new dev'"
+                sh returnStatus: true, script: 'terraform workspace new dev'
                 sh "terraform destroy -auto-approve"
             }
         }
