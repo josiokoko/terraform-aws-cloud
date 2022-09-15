@@ -9,6 +9,7 @@ pipeline {
         stage('S3 - create Bucket') {
             steps{
                 script{
+                    sh "terraform init"
                     createS3Bucket('joe-terraform-09-09')
                 }
             }
